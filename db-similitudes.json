@@ -1,0 +1,1 @@
+[{"usuario":"Luna","others":[{"usuario":"Gsus","similaridad":0.2}],"id":null},{"usuario":"Runu","others":[{"usuario":"Gsus","similaridad":0.4},{"usuario":"Luna","similaridad":0.5}],"id":null},{"usuario":"Gsus","others":[{"usuario":"Luna","similaridad":0.25},{"usuario":"Runu","similaridad":0.2}],"id":16}]

@@ -1,0 +1,66 @@
+doctype html
+html
+    head
+        meta(charset='utf-8')
+        meta(name="viewport" content="width=device-width, initial-scale=1")
+        title CultUPB
+
+        link(rel='stylesheet' href='//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.2/css/bootstrap.min.css')
+        script(src="https://use.fontawesome.com/36332d08d2.js")
+        link(rel='stylesheet' href="stylesheets/style.css")
+
+    body
+        .container
+            .row
+                .col-xs-12
+                    if !usuario
+                        .row
+                            .col-sm-4.col-sm-offset-4
+                                h1.Header CultUPB
+                                h1.Title Bienvenido
+                                form(method='get').form-signin
+                                    p.form-signin-heading Escriba un nombre de usuario
+                                    .form-group
+                                        input.form-control(name='usuario' placeholder='Nombre de Usuario')
+                                    button.btn.btn-primary Ingresar
+
+                    else
+                        .page-header
+                            h1.Title Hola, #{usuario}!
+                            .row
+                                .col-xs-12
+                                    h2.SubTitle Señale si es de su agrado, o no, los siguientes cursos
+                                    for curso , i in cursos
+                                        if i >= 1
+                                            if i % 4 == 0
+                                                .row
+                                                    for curso in cursos.slice(i, i+4)
+                                                        .col-sm-3
+                                                            .thumbnail
+                                                                img(src='#{curso.thumb.url}')
+                                                                .caption
+                                                                    h4(style='margin-bottom: 24px; text-overflow: ellipsis; white-space: nowrap; overflow: hidden;') #{curso.name}
+                                                                    .row
+                                                                        .col-xs-6
+                                                                            if likes.indexOf(curso.id) != -1
+                                                                                form.text-center(action='/like?curso=#{curso.id}&usuario=#{usuario}&unset=yes' method='post')
+                                                                                    button.btn.btn-default.active
+                                                                                        span(class="fa fa-thumbs-o-up", aria-hidden="true")
+                                                                            else
+                                                                                form.text-center(action='/like?curso=#{curso.id}&usuario=#{usuario}' method='post')
+                                                                                    button.btn.btn-default
+                                                                                        span(class="fa fa-thumbs-o-up", aria-hidden="true")
+                                                                        .col-xs-6
+                                                                            if dislikes.indexOf(curso.id) != -1
+                                                                                form.text-center(action='/dislike?curso=#{curso.id}&usuario=#{usuario}&unset=yes' method='post')
+                                                                                    button.btn.btn-default.active
+                                                                                        span(class="fa fa-thumbs-o-down", aria-hidden="true")
+                                                                            else
+                                                                                form.text-center(action='/dislike?curso=#{curso.id}&usuario=#{usuario}' method='post')
+                                                                                    button.btn.btn-default
+                                                                                        span(class="fa fa-thumbs-o-down", aria-hidden="true")
+                            .row
+                            .col-xs-12
+                            h2
+                                .pull-right
+                                    a(type="button" class="Button" href="/recomend?usuario=#{usuario}") Recomendaciones

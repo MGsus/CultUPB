@@ -1,0 +1,37 @@
+doctype html
+html
+    head
+        meta(charset='utf-8')
+        meta(name="viewport" content="width=device-width, initial-scale=1")
+        title CultUPB
+
+        link(rel='stylesheet' href='//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.2/css/bootstrap.min.css')
+        script(src="https://use.fontawesome.com/36332d08d2.js")
+        link(rel='stylesheet' href="stylesheets/style.css")
+
+    body
+        .container
+            .row
+                .col-xs-12
+                    h1.Title #{usuario}!
+                    h2| Otros usuarios también les ha gustado
+                    .Container
+                        .row
+                            for curso, i in recomendaciones
+                                if i % 4 == 0
+                                    .row
+                                        for curso in recomendaciones.slice(i, i+4)
+                                            .col-sm-3
+                                                .thumbnail
+                                                    img(src='#{curso.thumb.url}')
+                                                    .caption
+                                                        h4(style='margin-bottom: 24px; text-overflow: ellipsis; white-space: nowrap; overflow: hidden;') #{curso.name}
+                                                        .row
+                                                            .col-xs-6
+                                                                form.text-center(action='/like?curso=#{curso.id}&usuario=#{usuario}' method='post')
+                                                                    button.btn.btn-default
+                                                                        span(class="fa fa-thumbs-o-up", aria-hidden="true")
+                                                            .col-xs-6
+                                                                form.text-center(action='/dislike?curso=#{curso.id}&usuario=#{usuario}' method='post')
+                                                                    button.btn.btn-default
+                                                                        span(class="fa fa-thumbs-o-down", aria-hidden="true")

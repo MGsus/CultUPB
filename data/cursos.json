@@ -1,0 +1,72 @@
+[
+  {
+    "id": "1",
+    "name": "Baile de Salón",
+    "thumb": {
+      "url": "//png.icons8.com/ballroom-dance-filled/ios7/100"
+    }
+  },
+  {
+    "id": "2",
+    "name": "Origami",
+    "thumb": {
+      "url": "//png.icons8.com/origami-filled/ios7/100"
+    }
+  },
+  {
+    "id": "3",
+    "name": "Bricolaje",
+    "thumb": {
+      "url": "//png.icons8.com/toolbox-filled/ios7/100"
+    }
+  },
+  {
+    "id": "4",
+    "name": "Caricatura, manga y comic",
+    "thumb": {
+      "url": "//png.icons8.com/naruto-filled/ios7/100"
+    }
+  },
+  {
+    "id": "5",
+    "name": "Dibujo y pintura artística",
+    "thumb": {
+      "url": "//png.icons8.com/illustrator-filled/ios7/100"
+    }
+  },
+  {
+    "id": "6",
+    "name": "Cine Foro",
+    "thumb": {
+      "url": "//png.icons8.com/clapperboard-filled/ios7/100"
+    }
+  },
+  {
+    "id": "7",
+    "name": "Video Conciertos",
+    "thumb": {
+      "url": "//png.icons8.com/stage-filled/ios7/100"
+    }
+  },
+  {
+    "id": "8",
+    "name": "Estampado",
+    "thumb": {
+      "url": "https://png.icons8.com/tailor-shirt-pattern-filled/ios7/100"
+    }
+  },
+  {
+    "id": "9",
+    "name": "Etiqueta y Protocolo",
+    "thumb": {
+      "url": "//png.icons8.com/food-and-wine-filled/ios7/100"
+    }
+  },
+  {
+    "id": "10",
+    "name": "Teatro",
+    "thumb": {
+      "url": "//png.icons8.com/theatre-mask-filled/ios7/100"
+    }
+  }
+]
